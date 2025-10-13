@@ -34,11 +34,10 @@
     transition .3s
     gap .5rem
     max-height calc(100dvh - 180px)
-    max-width 1300px
+    max-width calc(100% - 64px)
 
-    +maxWidth1400()
+    +maxWidth1300()
       justify-content center
-      max-width calc(100% - 64px)
 
     +maxWidth768()
       display none
@@ -63,7 +62,7 @@
   .console-card-group-right
     display flex
     flex-direction column
-    justify-content flex-start
+    justify-content center
     height 100%
     width 60%
     overflow hidden
@@ -83,7 +82,7 @@
     flex-direction: column
 
   .console-card.tags
-    flex 1
+    height calc(100% - 172px)
     +maxHeight800()
       height 100%
 
@@ -255,9 +254,9 @@
       display flex
       flex-direction row
       flex-wrap wrap
+      justify-content flex-start
       gap .5rem
-      height auto
-      max-height 164px
+      height 164px
 
       li.item
         flex 1 1 calc(100% / 4 - 1.5rem)

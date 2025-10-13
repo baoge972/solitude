@@ -37,19 +37,19 @@ nav:
   # Menu
   # 菜单
   menu:
-    # 首页: / # name: link
-    # 文章: # name
-    #   归档: /archives/ || fas fa-folder-closed # item name: link || icon
-    #   分类: /categories/ || fas fa-clone
-    #   标签: /tags/ || fas fa-tags
-    # 友链:
-    #   朋友圈: /moments/ || fas fa-wifi
-    #   友情链接: /links/ || fas fa-user-group
-    #   宝藏博主: javascript:travelling() || fas fa-gift
-    # 我的:
-    #   关于: /about/ || fas fa-user
-    #   装备: /kit/ || fas fa-laptop
-    #   音乐馆: /music/ || fas fa-music
+    首页: / # name: link
+    文章: # name
+      归档: /archives/ || fas fa-folder-closed # item name: link || icon
+      分类: /categories/ || fas fa-clone
+      标签: /tags/ || fas fa-tags
+    友链:
+      朋友圈: /moments/ || fas fa-wifi
+      友情链接: /links/ || fas fa-user-group
+      宝藏博主: javascript:travelling() || fas fa-gift
+    我的:
+      关于: /about/ || fas fa-user
+      装备: /kit/ || fas fa-laptop
+      音乐馆: /music/ || fas fa-music
 
   # Right button
   # 右侧按钮
@@ -104,6 +104,8 @@ hometop:
     img: /img/default.avif
     color: "none"
 # --------------------------- end ---------------------------
+
+
 
 # --------------------------- start ---------------------------
 # Aside
@@ -241,7 +243,7 @@ post:
     # 版权
     copyright:
       enable: true
-      author: /img/logo.png # url
+      author: https://s3.bmp.ovh/imgs/2025/03/12/f7dc5f482df9c47f.jpg # url
       # License
       # 许可证
       license: CC BY-NC-SA 4.0
@@ -357,6 +359,16 @@ font:
   # Code font
   # 代码字体
   code-font-family: '"monospace", monospace'
+# --------------------------- end ---------------------------
+
+# --------------------------- start ---------------------------
+# Background
+# 背景图片
+background:
+  enable: false
+  opacity: .2
+  dark: https://i.pinimg.com/originals/d8/b3/9d/d8b39d12b653810db452c437211aeb2e.png
+  light: https://i.pinimg.com/originals/93/57/38/935738ed9657b296c2ef0ebd2151eb66.jpg
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -580,14 +592,11 @@ meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth
 # Capsule music
 # 音乐胶囊
 capsule:
-  enable: false
-  # 歌单 ID / 单曲 ID
-  id: 5144842535
-  # 服务商：netease / qq / xiami / kugou / baidu
+  enable: true
   server: netease
-  # 类型：playlist / song
   type: playlist
-  volume: 0.8
+  volume: 0.6
+  id: 3778678
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -596,29 +605,32 @@ capsule:
 # 快捷菜单
 # 使用 shift + ? 打开
 keyboard:
-  enable: false
+  enable: true
   list:
-    # - name: 关闭快捷菜单
-    #   key: K
-    #   func: keyboard
-    # - name: 打开控制台
-    #   key: A
-    #   sco: showConsole
-    # - name: 播放/暂停音乐
-    #   key: M
-    #   sco: musicToggle
-    # - name: 打开友链
-    #   key: L
-    #   url: /links/
+    - name: 关闭快捷菜单
+      key: K
+      func: keyboard
+    - name: 打开控制台
+      key: A
+      sco: showConsole
+    - name: 播放/暂停音乐
+      key: M
+      sco: musicToggle
+    - name: 打开友链
+      key: L
+      url: /links/
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
 # Lazyload
-# 懒加载
+# 图片懒加载
 lazyload:
   enable: false
+  # post, site
   field: site
+  # 加载时替换图
   placeholder: ""
+  # 加载失败替换图
   errorimg: /img/error_load.avif
 # --------------------------- end ---------------------------
 
@@ -727,9 +739,11 @@ verify_site:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# Legacy CSS Prefix 
-# CSS前缀配置
-css_prefix: true
+# CSS Prefix
+# CSS 前缀
+# When turned on, it will automatically prefix the CSS (to get better browser support), but this will increase the size of the CSS file.
+# 开启后会自动给 CSS 加前缀（以获得更好的浏览器支持），但这会增加 CSS 文件的大小。
+css_prefix: false
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -836,8 +850,8 @@ giscus:
 # --------------------------- start ---------------------------
 # Search
 search:
-  enable: false
-  type: # local / algolia / docsearch
+  enable: true # true
+  type: local # local / algolia / docsearch
   tags:
     # - Solitude
     # - Hexo
@@ -864,19 +878,11 @@ search:
 # Music Page
 # 音乐馆
 music:
-  enable: false
-  # 歌单 ID / 单曲 ID
-  id: 5144842535
-  # 服务商：netease / qq / xiami / kugou / baidu
+  enable: true
   server: netease
-  # 类型：playlist / song
   type: playlist
-  # 默认音量
-  volume: 0.8
-  # 是否自动播放
-  mutex: true
-  # 播放方式：list / random
-  order: list
+  volume: 0.6
+  id: 3778678
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
@@ -949,19 +955,12 @@ google_adsense:
 # --------------------------- end ---------------------------
 
 # --------------------------- start ---------------------------
-# CDN Configuration
-# CDN配置
+# 非必要请勿修改
 CDN:
-  # CDN providers configuration
-  # CDN提供商配置
   internal: local # local / cdnjs / jsdelivr / unpkg / custom
   third_party: custom # cdnjs / jsdelivr / unpkg / custom
   version: true # 是否使用版本号
-  
-  # Custom format for CDN URLs
-  # CDN URL 自定义格式
-  custom_format: https://cdn.jsdelivr.net/npm/${name}@${version}/${min_file}
-  
+  custom_format: https://fastly.jsdelivr.net/npm/${name}@${version}/${min_file} # 自定义格式
   # 直接覆盖默认 CDN 链接（优先级最高）
   options:
     # algolia_search:
