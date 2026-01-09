@@ -4,7 +4,6 @@
   transition all .5s ease 0s
   display flex
   justify-content center
-  z-index 1
 
   &.not-top-img
     height 60px
@@ -47,7 +46,7 @@
       font-size 2.85em
 
   #nav
-    z-index 50
+    z-index 100
     box-shadow none
     transition 0.3s
     display flex
@@ -439,9 +438,6 @@
     display flex
     flex-direction row
     justify-content center
-    
-    +maxWidth768()
-      width 100%
 
     .menus_item
       padding 0 .4rem
@@ -478,18 +474,6 @@
         display flex
         flex-direction column
         flex-wrap wrap
-        
-        &::before
-          position absolute
-          top -8px
-          left 0
-          width 100%
-          height 20px
-          content ""
-
-        &:before
-          top -10px
-
 
         li
           display flex
