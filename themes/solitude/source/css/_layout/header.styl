@@ -480,12 +480,15 @@
         min-width 120px
         width max-content
         max-width 300px
-        left auto
+        left 0
         right auto
         z-index 99999
         display flex
         flex-direction column
         flex-wrap wrap
+        
+        +maxWidth768()
+          left 0 !important
 
 
         li
