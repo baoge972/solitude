@@ -448,26 +448,34 @@
       position relative
 
       .menus_item_child
-        padding 6px 4px 8px 4px
-        border-radius 100px
+        padding 4px
+        border-radius 8px
         background-color var(--efu-maskbgdeep)
         box-shadow var(--efu-shadow-black)
         border var(--style-border)
         transition .3s
         backdrop-filter blur(20px)
-        top 35px
+        top 100%
         position absolute
-        margin-top 8px
+        margin-top 2px
         white-space nowrap
         opacity 0
         pointer-events none
         transform translateY(-10px) scale(.8)
+        max-height 60vh
+        overflow-y auto
+        overflow-x hidden
+        min-width 120px
+        width max-content
+        left 0
+        right auto
+        z-index 999
 
         li
           display inline-flex
           list-style none
           border-radius 5px
-          margin 0 4px
+          margin 0 2px
 
           #page-header & a
             letter-spacing 0
