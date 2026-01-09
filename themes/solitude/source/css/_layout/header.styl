@@ -448,7 +448,7 @@
       display none
 
     .menus_item
-      padding 0 .2rem
+      padding 0 .4rem
       display flex
       flex-direction column
       align-items center
@@ -463,7 +463,7 @@
         border var(--style-border)
         transition .3s
         backdrop-filter blur(20px)
-        top 40px
+        top 100%
         position absolute
         margin-top 8px
         white-space nowrap
@@ -478,6 +478,9 @@
         left 0
         right auto
         z-index 999
+        +maxWidth768()
+          left auto
+          right 0
 
         li
           display inline-flex
