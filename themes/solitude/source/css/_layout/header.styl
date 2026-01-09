@@ -431,7 +431,6 @@
   .menus_items
     position relative
     width fit-content
-    max-width 100vw
     text-align center
     left 0
     right 0
@@ -439,13 +438,6 @@
     display flex
     flex-direction row
     justify-content center
-    overflow-x auto
-    overflow-y hidden
-    white-space nowrap
-    scrollbar-width none
-    -ms-overflow-style none
-    &::-webkit-scrollbar
-      display none
 
     .menus_item
       padding 0 .4rem
@@ -457,36 +449,25 @@
 
       .menus_item_child
         padding 6px 4px 8px 4px
-        border-radius 12px
+        border-radius 100px
         background-color var(--efu-maskbgdeep)
         box-shadow var(--efu-shadow-black)
         border var(--style-border)
         transition .3s
         backdrop-filter blur(20px)
-        top 100%
+        top 35px
         position absolute
         margin-top 8px
         white-space nowrap
         opacity 0
         pointer-events none
         transform translateY(-10px) scale(.8)
-        max-height 60vh
-        overflow-y auto
-        overflow-x hidden
-        min-width 160px
-        width max-content
-        left 0
-        right auto
-        z-index 999
-        +maxWidth768()
-          left auto
-          right 0
 
         li
           display inline-flex
           list-style none
           border-radius 5px
-          margin 0 2px
+          margin 0 4px
 
           #page-header & a
             letter-spacing 0
@@ -907,4 +888,3 @@ if hexo-config('console.enable')
   #nav-console
     +maxWidth768()
       display none
-
