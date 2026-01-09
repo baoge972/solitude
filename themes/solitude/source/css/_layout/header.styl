@@ -430,30 +430,22 @@
 
   .menus_items
     position relative
-    width calc(100% - 220px)
-    max-width 1000px
+    width fit-content
     text-align center
     left 0
     right 0
     top 0
     display flex
     flex-direction row
-    justify-content flex-start
-    overflow-x auto
-    overflow-y hidden
-    scrollbar-width none
-    -ms-overflow-style none
-    &::-webkit-scrollbar
-      display none
+    justify-content center
 
     .menus_item
-      padding 0 .2rem
+      padding 0 .4rem
       display flex
       flex-direction column
       align-items center
       margin auto
       position relative
-      z-index 1000
 
       .menus_item_child
         padding 4px
@@ -465,7 +457,7 @@
         backdrop-filter blur(20px)
         top 100%
         position absolute
-        margin-top 8px
+        margin-top 2px
         white-space normal
         opacity 0
         pointer-events none
@@ -476,13 +468,12 @@
         min-width 120px
         width max-content
         max-width 300px
-        left auto
+        left 0
         right auto
-        z-index 99999
+        z-index 999
         display flex
         flex-direction column
         flex-wrap wrap
-
 
         li
           display flex
