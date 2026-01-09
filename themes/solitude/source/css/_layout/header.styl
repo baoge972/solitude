@@ -430,14 +430,22 @@
 
   .menus_items
     position relative
-    width fit-content
+    width 100%
+    max-width 100vw
     text-align center
     left 0
     right 0
     top 0
     display flex
     flex-direction row
-    justify-content center
+    justify-content flex-start
+    overflow-x auto
+    overflow-y hidden
+    white-space nowrap
+    scrollbar-width none
+    -ms-overflow-style none
+    &::-webkit-scrollbar
+      display none
 
     .menus_item
       padding 0 .4rem
@@ -462,6 +470,9 @@
         opacity 0
         pointer-events none
         transform translateY(-10px) scale(.8)
+        max-height 60vh
+        overflow-y auto
+        overflow-x hidden
 
         li
           display inline-flex
