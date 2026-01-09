@@ -35,7 +35,7 @@ nav:
       标签云: /tags/
 
     # 外部导航 (External Navigation)
-    书签导航:
+    书签/博客:
       书签导航: https://sqdh.653827.xyz || anzhiyu-icon-bookmark
       jsqdh: https://jsqdh.653827.xyz || anzhiyu-icon-bookmark
       导航1: https://nav.baoge.wang/ || anzhiyu-icon-compass
@@ -50,8 +50,7 @@ nav:
       简约2: https://dfile.baoge.wang/%E7%AE%80%E7%BA%A62.html || anzhiyu-icon-compass
       jianyue2: https://dfile.baoge.wang/jianyue2.html || anzhiyu-icon-compass
 
-    # 博客 (Blogs)
-    自用博客:
+   
       Gridea博客: https://bk.baoge.wang/ || anzhiyu-icon-blog
       XAMPP博客: https://xampp.baoge.wang/ || anzhiyu-icon-blog
       RIN博客: https://blog.baoge.wang/ || anzhiyu-icon-blog
@@ -65,7 +64,7 @@ nav:
       Blogger: https://baoge666.blogspot.com/ || anzhiyu-icon-blog
 
     # 工具页
-    工具页:
+    工具:
       黑猫文件管理: https://file.baoge.wang || anzhiyu-icon-file
       IP检测: https://file.baoge.wang/ipjc || anzhiyu-icon-tool
       网址加速器: https://js.653827.xyz/ || anzhiyu-icon-tool
@@ -92,8 +91,7 @@ nav:
       Cron表达式: https://cron.qqe2.com/
       Temp临时邮件: https://mail.tm/zh/ || anzhiyu-icon-mail
 
-    # 工具箱
-    工具箱:
+    
       彩虹工具箱: https://tool.cccyun.cc/ || anzhiyu-icon-toolbox
       在线工具箱: https://tool.lu/ || anzhiyu-icon-toolbox
       在线工具: https://toolonline.net/ || anzhiyu-icon-toolbox
@@ -107,7 +105,7 @@ nav:
       Bilibili音乐: https://www.bilibili.com/video/BV1564y1m7Mu?spm_id_from=333.788.videopod.sections&vd_source=954e725e91c1c3621a8a51c91cb1da04 || anzhiyu-icon-monitor
       微信读书: https://weread.qq.com/web/category/100000 || anzhiyu-icon-chart
     # Markdown以及代码混淆
-    Markdown:
+    Markdown/代码混淆:
       Tool On lion: https://toolonline.net/markdown || anzhiyu-icon-markdown
       Arya: https://markdown.lovejade.cn/ || anzhiyu-icon-markdown
       锤子在线: https://www.toolhelper.cn/Code/Markdown || anzhiyu-icon-markdown
