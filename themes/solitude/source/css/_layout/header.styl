@@ -464,30 +464,31 @@
         padding 4px
         border-radius 8px
         background-color var(--efu-maskbgdeep)
-        box-shadow var(--efu-shadow-black)
-        border var(--style-border)
+        box-shadow var(--efu-shadow-black) !important
+        border var(--style-border) !important
         transition .3s
         backdrop-filter blur(20px)
-        top 100%
-        position absolute
+        top 100% !important
+        position absolute !important
         margin-top 8px
         white-space normal
-        opacity 0
-        pointer-events none
-        transform translateY(-10px) scale(.8)
+        opacity 1 !important
+        pointer-events all !important
+        transform translateY(0) scale(1) !important
         max-height 60vh
         overflow-y auto
         overflow-x hidden
         min-width 120px
         width max-content
         max-width 300px
-        left 0
+        left 0 !important
         right auto
         z-index 999999 !important
-        display flex
+        display flex !important
         flex-direction column
         flex-wrap wrap
         will-change transform
+        visibility: visible !important;
         
         +maxWidth768()
           left 0 !important
@@ -535,12 +536,12 @@
 
       &:hover
         .menus_item_child
-          display block
-          border var(--style-border-hover)
-          box-shadow var(--efu-shadow-main)
-          opacity 1
-          pointer-events all
-          transform translateY(0) scale(1)
+          display block !important
+          border var(--style-border-hover) !important
+          box-shadow var(--efu-shadow-main) !important
+          opacity 1 !important
+          pointer-events all !important
+          transform translateY(0) scale(1) !important
 
         i
           &.expand
