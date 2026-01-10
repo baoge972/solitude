@@ -53,6 +53,7 @@
     display flex
     justify-content center
     user-select none
+    overflow: visible  // 确保容器不限制下拉菜单显示
 
     +maxWidth768()
       transition 0s
@@ -244,7 +245,7 @@
         +minWidth900()
           transition .15s
           position relative
-          top -60px
+          top 0  // 修复下拉菜单被隐藏的问题
 
     &.nav-visible
       #nav
@@ -264,7 +265,7 @@
             opacity 1
             transition .15s
             position relative
-            top: 0
+            top: 0  // 确保在nav-visible状态下菜单项位置正确
 
         #menus
           +minWidth900()
@@ -441,7 +442,7 @@
     flex-direction row
     justify-content flex-start
     overflow-x auto
-    overflow-y hidden
+    overflow-y visible  // 修改为visible以确保下拉菜单可见
     scrollbar-width none
     -ms-overflow-style none
     &::-webkit-scrollbar
@@ -480,6 +481,7 @@
       margin auto
       position relative
       min-width fit-content
+      z-index 100  // 确保菜单项有足够高的层级
 
       .menus_item_child
         padding 4px
@@ -506,6 +508,7 @@
         right auto
         z-index 9999  // 提高z-index层级避免被遮挡
         display grid
+        position: absolute !important  // 确保使用绝对定位
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr))
         gap: 4px
         
@@ -570,23 +573,34 @@
           pointer-events all
           transform translateY(0) scale(1)
           
-      // 确保在移动设备上菜单也能正常显示
+      &.hover
+        .menus_item_child
+          display block
+          border var(--style-border-hover)
+          box-shadow var(--efu-shadow-main)
+          opacity 1
+          pointer-events all
+          transform translateY(0) scale(1)
+          
+      // 修复下拉菜单显示问题
       @media (max-width: 768px)
         .menus_item_child
-          position fixed !important  // 在移动设备上使用fixed定位避免被遮挡
-          top 60px !important
-          left auto !important
+          position absolute !important
+          top 100% !important
+          left 0 !important
           right auto !important
-          max-height 70vh !important
-          width 90% !important
-          max-width 300px !important
-          margin-left -100px !important
+          margin-top 2px !important
+          max-height 60vh !important
+          width 250px !important
+          max-width 90vw !important
           
-          &:hover
-            position absolute !important  // 鼠标悬停时恢复absolute定位
-            top 100% !important
-            left 0 !important
-            margin-left 0 !important
+      // 确保下拉菜单总是可见
+      .menus_item_child
+        visibility visible !important
+        
+      .menus_item.hover .menus_item_child
+        visibility visible !important
+        display block !important
 
         i
           &.expand
