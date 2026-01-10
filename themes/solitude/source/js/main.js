@@ -146,7 +146,12 @@ const addCopyright = () => {
     const copyText = window.getSelection().toString();
     const text =
       copyText.length > limit
-        ? `${copyText}\n\n${author}\n${link}${window.location.href}\n${source}\n${info}`
+        ? `${copyText}
+
+${author}
+${link}${window.location.href}
+${source}
+${info}`
         : copyText;
     e.clipboardData.setData("text", text);
   });
@@ -191,6 +196,82 @@ const sco = {
   lastWittyWord: "",
   wasPageHidden: false,
   musicPlaying: false,
+
+  // 初始化音乐胶囊折叠状态
+  initMusicCapsule: function() {
+    const navMusic = document.getElementById('nav-music');
+    if (navMusic) {
+      // 默认设置为折叠状态
+      navMusic.classList.add('collapsed');
+      
+      // 添加点击事件来切换展开/折叠状态
+      navMusic.addEventListener('click', function(e) {
+        // 防止点击内部元素时触发整体切换
+        if (e.target.closest('.nav-music-capsule')) {
+          navMusic.classList.toggle('collapsed');
+        }
+      });
+      
+      // 如果音乐播放器正在播放，则显示完整状态
+      const aplayer = document.querySelector('meting-js')?.aplayer;
+      if (aplayer) {
+        aplayer.on('play', () => {
+          navMusic.classList.remove('collapsed');
+        });
+        
+        aplayer.on('pause', () => {
+          navMusic.classList.add('collapsed');
+        });
+      }
+    }
+  },
+  
+  // 初始化移动端菜单下拉功能
+  initMobileDropdown: function() {
+    // 为菜单项添加点击事件，以支持移动设备上的下拉菜单
+    const menuItems = document.querySelectorAll('.menus_item');
+    menuItems.forEach(item => {
+      const childMenu = item.querySelector('.menus_item_child');
+      if (childMenu) {
+        // 添加点击事件以在移动设备上显示下拉菜单
+        const menuItemLink = item.querySelector('.site-page');
+        if (menuItemLink) {
+          menuItemLink.addEventListener('click', function(e) {
+            // 检测是否为移动设备
+            if (window.innerWidth < 768) {
+              e.preventDefault();
+              
+              // 隐藏所有其他下拉菜单
+              menuItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                  otherItem.classList.remove('hover');
+                }
+              });
+              
+              // 切换当前菜单的下拉状态
+              item.classList.toggle('hover');
+            }
+          });
+        }
+        
+        // 添加点击外部区域关闭下拉菜单的功能
+        document.addEventListener('click', function(e) {
+          if (!item.contains(e.target)) {
+            item.classList.remove('hover');
+          }
+        });
+      }
+    });
+    
+    // 监听窗口大小变化，移除不必要的hover类
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 768) {
+        menuItems.forEach(item => {
+          item.classList.remove('hover');
+        });
+      }
+    });
+  },
   scrollTo(elementId) {
     const targetElement = document.getElementById(elementId);
     if (targetElement) {
@@ -956,6 +1037,8 @@ document.addEventListener("DOMContentLoaded", () => {
     asideStatus,
     () => (window.onscroll = percent),
     sco.initConsoleState,
+    sco.initMusicCapsule,
+    sco.initMobileDropdown,
   ].forEach((fn) => fn());
 });
 
