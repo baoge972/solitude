@@ -4,7 +4,6 @@
   transition all .5s ease 0s
   display flex
   justify-content center
-  z-index 99999  // 极高层级确保下拉菜单能显示在其上方
 
   &.not-top-img
     height 60px
@@ -47,13 +46,12 @@
       font-size 2.85em
 
   #nav
-    z-index 99999  // 提高导航栏层级
+    z-index 100
     box-shadow none
     transition 0.3s
     display flex
     justify-content center
     user-select none
-    overflow: visible  // 确保容器不限制下拉菜单显示
 
     +maxWidth768()
       transition 0s
@@ -77,13 +75,6 @@
       position relative
       padding 0 1.5rem
       align-items center
-      
-      // 确保菜单区域高度固定，不随内容扩展
-      .menus_items
-        flex: 1 0 auto
-        min-height 40px
-        max-height 60px
-        align-self stretch
 
       +maxWidth768()
         width 100%
@@ -252,7 +243,7 @@
         +minWidth900()
           transition .15s
           position relative
-          top 0  // 修复下拉菜单被隐藏的问题
+          top -60px
 
     &.nav-visible
       #nav
@@ -272,7 +263,7 @@
             opacity 1
             transition .15s
             position relative
-            top: 0  // 确保在nav-visible状态下菜单项位置正确
+            top: 0
 
         #menus
           +minWidth900()
@@ -439,74 +430,22 @@
 
   .menus_items
     position relative
-    width calc(100% - 200px)
-    max-width 1000px
+    width fit-content
     text-align center
     left 0
     right 0
     top 0
     display flex
     flex-direction row
-    justify-content flex-start
-    overflow-x auto
-    overflow-y visible
-    scrollbar-width thin
-    -ms-overflow-style auto
-    &::-webkit-scrollbar
-      height 4px
-      width 4px
-    &::-webkit-scrollbar-track
-      background var(--efu-secondbg)
-    &::-webkit-scrollbar-thumb
-      background var(--efu-main)
-      border-radius 2px
-      &:hover
-        background var(--efu-main-none)
-    
-    // 确保菜单区域固定高度，不挤压其他元素
-    min-height 40px
-    max-height 60px
-    align-self stretch
-        
-    +maxWidth1200()
-      width calc(100% - 180px)
-          
-    +maxWidth1024()
-      width calc(100% - 150px)
-          
-    +maxWidth900()
-      width calc(100% - 120px)
-          
-    +maxWidth768()
-      width calc(100% - 100px)
-      max-width 600px
-      justify-content flex-start
-      padding 0 10px
-          
-    // 在特别窄的屏幕上调整宽度
-    +maxWidth600()
-      width calc(100% - 60px)
-      padding 0 5px
-      
-    // 移动设备优化
-    +maxWidth768()
-      .menus_item
-        padding 0 .2rem  // 在移动设备上减少间距
-        max-width 80px  // 移动端菜单项最大宽度
-        position: relative  // 确保菜单项作为下拉菜单的定位上下文
-        
+    justify-content center
+
     .menus_item
       padding 0 .4rem
       display flex
       flex-direction column
       align-items center
       margin auto
-      position relative  // 确保作为下拉菜单的定位上下文
-      min-width fit-content
-      z-index 100
-      
-      // 限制菜单项的最大宽度，防止过度扩展
-      max-width 120px
+      position relative
 
       .menus_item_child
         padding 4px
@@ -526,34 +465,15 @@
         max-height 60vh
         overflow-y auto
         overflow-x hidden
-        min-width 200px
-        width 250px
+        min-width 120px
+        width max-content
         max-width 300px
         left 0
         right auto
-        z-index 999999  // 设置极高z-index确保下拉菜单显示在所有内容之上
-        display grid
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr))
-        gap: 4px
-        
-        // 修复下拉菜单显示问题 - 确保容器不影响定位
-        &,
-        ul,
-        li
-          position: relative !important
-          z-index: 999999 !important  // 确保下拉菜单内部元素也具有高z-index
-        
-        &::before
-          position absolute
-          top -8px
-          left 0
-          width 100%
-          height 20px
-          content ""
-
-        &:before
-          top -10px
-
+        z-index 999
+        display flex
+        flex-direction column
+        flex-wrap wrap
 
         li
           display flex
@@ -603,35 +523,6 @@
           opacity 1
           pointer-events all
           transform translateY(0) scale(1)
-          
-      &.hover
-        .menus_item_child
-          display block
-          border var(--style-border-hover)
-          box-shadow var(--efu-shadow-main)
-          opacity 1
-          pointer-events all
-          transform translateY(0) scale(1)
-          
-      // 修复下拉菜单显示问题
-      @media (max-width: 768px)
-        .menus_item_child
-          position absolute !important
-          top 100% !important
-          left 0 !important
-          right auto !important
-          margin-top 2px !important
-          max-height 60vh !important
-          width 250px !important
-          max-width 90vw !important
-          
-      // 确保下拉菜单总是可见
-      .menus_item_child
-        visibility visible !important
-        
-      .menus_item.hover .menus_item_child
-        visibility visible !important
-        display block !important
 
         i
           &.expand
@@ -649,12 +540,8 @@
   .site-page
     position relative
     padding-bottom .3rem
-    font-size .75em  // 稍微减小字体以适应更多菜单
+    font-size .78em
     cursor pointer
-    max-width 100%
-    overflow hidden
-    text-overflow ellipsis
-    white-space nowrap
 
   if hexo-config('nav.group')
     .back-home-button
