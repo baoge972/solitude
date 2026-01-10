@@ -155,40 +155,41 @@ nav:
 # --------------------------- 导航栏 end ---------------------------
 
 # --------------------------- 首页顶部 start ---------------------------
-hometop:
-  enable: true
-  banner:
-    title: 宁静致远 <br> 热爱生活
-    url: Hexo Theme Solitude
-    icon:
-      HTML:
-        img: https://i.postimg.cc/vBWVnY8q/html.png
-        color: "#e9572b"
-      JS:
-        img: https://i.postimg.cc/3N10Ltv2/js.png
-        color: "#f7cb4f"
-      Docker:
-        img: https://i.postimg.cc/8Pk6Fg24/docker.png
-        color: "#57b6e6"
-      Flutter:
-        img: https://i.postimg.cc/hPC7T3gB/flutter.png
-        color: "#ffffff"
-      WebPack:
-        img: https://i.postimg.cc/dVLZBmtT/webpack.png
-        color: "#2e3a41"
-      Git:
-        img: https://i.postimg.cc/nhgjwjCS/git.png
-        color: "#df5b40"
-  group:
-    热门: /tags/文章/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
-  recommendList:
-    sup: 置顶
-    title: Solitude 官方文档
-    url: https://solitude.js.org/
-    img: https://pan.811520.xyz/2024-10/1728279557702.webp
-    color: "none"
-carousel: false
+# hometop:
+#   enable: true
+#   banner:
+#     title: 宁静致远 <br> 热爱生活
+#     url: Hexo Theme Solitude
+#     icon:
+#       HTML:
+#         img: https://i.postimg.cc/vBWVnY8q/html.png
+#         color: "#e9572b"
+#       JS:
+#         img: https://i.postimg.cc/3N10Ltv2/js.png
+#         color: "#f7cb4f"
+#       Docker:
+#         img: https://i.postimg.cc/8Pk6Fg24/docker.png
+#         color: "#57b6e6"
+#       Flutter:
+#         img: https://i.postimg.cc/hPC7T3gB/flutter.png
+#         color: "#ffffff"
+#       WebPack:
+#         img: https://i.postimg.cc/dVLZBmtT/webpack.png
+#         color: "#2e3a41"
+#       Git:
+#         img: https://i.postimg.cc/nhgjwjCS/git.png
+#         color: "#df5b40"
+#   group:
+#     热门: /tags/文章/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+#   recommendList:
+#     sup: 置顶
+#     title: Solitude 官方文档
+#     url: https://solitude.js.org/
+#     img: https://pan.811520.xyz/2024-10/1728279557702.webp
+#     color: "none"
+# carousel: false
 # --------------------------- 首页顶部 end ---------------------------
+
 
 # --------------------------- 侧边栏 start ---------------------------
 aside:
