@@ -35,7 +35,7 @@ nav:
       标签云: /tags/
 
     # 外部导航 (External Navigation)
-    书签导航:
+    书签/博客:
       书签导航: https://sqdh.653827.xyz || anzhiyu-icon-bookmark
       jsqdh: https://jsqdh.653827.xyz || anzhiyu-icon-bookmark
       导航1: https://nav.baoge.wang/ || anzhiyu-icon-compass
@@ -50,8 +50,7 @@ nav:
       简约2: https://dfile.baoge.wang/%E7%AE%80%E7%BA%A62.html || anzhiyu-icon-compass
       jianyue2: https://dfile.baoge.wang/jianyue2.html || anzhiyu-icon-compass
 
-    # 博客 (Blogs)
-    自用博客:
+   
       Gridea博客: https://bk.baoge.wang/ || anzhiyu-icon-blog
       XAMPP博客: https://xampp.baoge.wang/ || anzhiyu-icon-blog
       RIN博客: https://blog.baoge.wang/ || anzhiyu-icon-blog
@@ -64,8 +63,8 @@ nav:
       CF-BLOG博客: https://cfblog.653827.xyz/ || anzhiyu-icon-blog
       Blogger: https://baoge666.blogspot.com/ || anzhiyu-icon-blog
 
-    # 工具页一
-    工具页一:
+    # 工具页
+    工具:
       黑猫文件管理: https://file.baoge.wang || anzhiyu-icon-file
       IP检测: https://file.baoge.wang/ipjc || anzhiyu-icon-tool
       网址加速器: https://js.653827.xyz/ || anzhiyu-icon-tool
@@ -79,9 +78,6 @@ nav:
       链接检测面板: https://file.baoge.wang/lianjiejiance8
       挪车码生成器一: https://ncewm.baoge.wang/
       挪车码生成器二: https://dfile.baoge.wang/%E6%8C%AA%E8%BD%A6%E4%BA%8C%E7%BB%B4%E7%A0%81/%E6%8C%AA%E8%BD%A6%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8.html
-
-    # 工具页二
-    工具页二:
       xugou监控: https://xugou.653827.xyz/monitors || anzhiyu-icon-monitor
       域名监控: https://ym.baoge.wang/ || anzhiyu-icon-monitor
       VPS到期监控: https://vps.shorten.dpdns.org/ || anzhiyu-icon-monitor
@@ -95,8 +91,7 @@ nav:
       Cron表达式: https://cron.qqe2.com/
       Temp临时邮件: https://mail.tm/zh/ || anzhiyu-icon-mail
 
-    # 工具箱
-    工具箱:
+    
       彩虹工具箱: https://tool.cccyun.cc/ || anzhiyu-icon-toolbox
       在线工具箱: https://tool.lu/ || anzhiyu-icon-toolbox
       在线工具: https://toolonline.net/ || anzhiyu-icon-toolbox
@@ -109,8 +104,8 @@ nav:
       骤雨重山: https://wp-cdn.4ce.cn/ || anzhiyu-icon-monitor
       Bilibili音乐: https://www.bilibili.com/video/BV1564y1m7Mu?spm_id_from=333.788.videopod.sections&vd_source=954e725e91c1c3621a8a51c91cb1da04 || anzhiyu-icon-monitor
       微信读书: https://weread.qq.com/web/category/100000 || anzhiyu-icon-chart
-    # Markdown工具
-    Markdown:
+    # Markdown以及代码混淆
+    代码相关:
       Tool On lion: https://toolonline.net/markdown || anzhiyu-icon-markdown
       Arya: https://markdown.lovejade.cn/ || anzhiyu-icon-markdown
       锤子在线: https://www.toolhelper.cn/Code/Markdown || anzhiyu-icon-markdown
@@ -118,8 +113,7 @@ nav:
       HTML~MD: https://devtool.tech/html-md || anzhiyu-icon-markdown
       Markdown 语法: https://markdown.com.cn/hacks.html#%E6%A6%82%E8%BF%B0 || anzhiyu-icon-markdown
 
-    # 代码混淆工具
-    代码混淆:
+    
       toolonline: https://toolonline.net/js-obfuscator || anzhiyu-icon-code
       傲星工具箱: https://tool.aoaostar.com/code_js || anzhiyu-icon-code
       Html加密: https://www.jb51.net/tools/html_jiami.htm || anzhiyu-icon-code
@@ -128,9 +122,6 @@ nav:
       Obfuscator2: https://obfuscator.io/ || anzhiyu-icon-code
 
     # 其它菜单
-    音乐:
-      音乐馆: /music/ || fas fa-music
-    
     其它菜单:
       每日早报: https://readhub.cn/daily || https://unavatar.io/readhub.cn
       新闻汇聚: https://xw.653827.xyz/ || https://s3.bmp.ovh/imgs/2025/04/06/e8efeb29eff52acb.png
@@ -362,7 +353,6 @@ footer:
     - name: RSS
       url: /atom.xml
 # --------------------------- 页脚 end ---------------------------
-
 # --------------------------- 音乐播放器配置 start ---------------------------
 # 音乐胶囊配置 - 使用网易云音乐（底部播放器）
 capsule:
@@ -380,5 +370,4 @@ music:
   volume: 0.6
   id: 2462294491
 # --------------------------- 音乐播放器配置 end ---------------------------
-
 # 其余配置项（如 comment、search、music、capsule、highlight、katex、pwa、CDN等）可参考官方文档或你原有的配置继续补充
