@@ -4,7 +4,7 @@
   transition all .5s ease 0s
   display flex
   justify-content center
-  z-index 1
+  z-index 99999  // 极高层级确保下拉菜单能显示在其上方
 
   &.not-top-img
     height 60px
@@ -47,7 +47,7 @@
       font-size 2.85em
 
   #nav
-    z-index 50
+    z-index 99999  // 提高导航栏层级
     box-shadow none
     transition 0.3s
     display flex
@@ -493,6 +493,7 @@
       .menus_item
         padding 0 .2rem  // 在移动设备上减少间距
         max-width 80px  // 移动端菜单项最大宽度
+        position: relative  // 确保菜单项作为下拉菜单的定位上下文
         
     .menus_item
       padding 0 .4rem
@@ -500,7 +501,7 @@
       flex-direction column
       align-items center
       margin auto
-      position relative
+      position relative  // 确保作为下拉菜单的定位上下文
       min-width fit-content
       z-index 100
       
@@ -530,7 +531,7 @@
         max-width 300px
         left 0
         right auto
-        z-index 9999  // 提高z-index层级避免被遮挡
+        z-index 999999  // 设置极高z-index确保下拉菜单显示在所有内容之上
         display grid
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr))
         gap: 4px
@@ -540,7 +541,7 @@
         ul,
         li
           position: relative !important
-          z-index: 10000 !important
+          z-index: 999999 !important  // 确保下拉菜单内部元素也具有高z-index
         
         &::before
           position absolute
