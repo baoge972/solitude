@@ -446,24 +446,40 @@
     -ms-overflow-style none
     &::-webkit-scrollbar
       display none
-    
+        
     +maxWidth1200()
       width calc(100% - 180px)
-      
+          
     +maxWidth1024()
       width calc(100% - 150px)
-      
+          
+    +maxWidth900()
+      width calc(100% - 120px)
+          
     +maxWidth768()
       width calc(100% - 100px)
       max-width 600px
-
+      justify-content flex-start
+      padding 0 10px
+          
+    // 在特别窄的屏幕上调整宽度
+    +maxWidth600()
+      width calc(100% - 60px)
+      padding 0 5px
+      
+    // 移动设备优化
+    +maxWidth768()
+      .menus_item
+        padding 0 .2rem  // 在移动设备上减少间距
+        
     .menus_item
-      padding 0 .2rem
+      padding 0 .4rem
       display flex
       flex-direction column
       align-items center
       margin auto
       position relative
+      min-width fit-content
 
       .menus_item_child
         padding 4px
@@ -488,7 +504,7 @@
         max-width 300px
         left 0
         right auto
-        z-index 999
+        z-index 9999  // 提高z-index层级避免被遮挡
         display grid
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr))
         gap: 4px
@@ -553,6 +569,24 @@
           opacity 1
           pointer-events all
           transform translateY(0) scale(1)
+          
+      // 确保在移动设备上菜单也能正常显示
+      @media (max-width: 768px)
+        .menus_item_child
+          position fixed !important  // 在移动设备上使用fixed定位避免被遮挡
+          top 60px !important
+          left auto !important
+          right auto !important
+          max-height 70vh !important
+          width 90% !important
+          max-width 300px !important
+          margin-left -100px !important
+          
+          &:hover
+            position absolute !important  // 鼠标悬停时恢复absolute定位
+            top 100% !important
+            left 0 !important
+            margin-left 0 !important
 
         i
           &.expand
