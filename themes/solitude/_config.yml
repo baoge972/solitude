@@ -493,7 +493,7 @@ console:
   card:
     # Tags
     # 标签
-    tags: true
+    标签: true
     # Archives
     # 归档
     archive: "month" # month: by month / year: by year
@@ -594,7 +594,7 @@ meting_api: "https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth
 capsule:
   enable: true
   server: netease
-  type: playlist
+  输入: playlist
   volume: 0.6
   id: 3778678
 # --------------------------- end ---------------------------
